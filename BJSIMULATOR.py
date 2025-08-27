@@ -282,7 +282,7 @@ if __name__ == "__main__":
     bot = input('¿Quieres simular una estrategia? (s/n)') == 's'
     if bot:
         use_log = input('¿Quieres imprimir los logs por pantalla? (s/n)') != 's'
-        estrategia = input('¿Qué estrategia quieres que utilice el bot? \n 1:Random \n 2:Mayor que 18.55 \n 3:Estrategia básica')
+        estrategia = input('¿Qué estrategia quieres que utilice el bot? \n 1:Random \n 2:Mayor que 18.55 \n 3:Estrategia básica \n')
         if estrategia == '1':
             estrategia = get_random_decision
         elif estrategia == '2':
@@ -319,7 +319,7 @@ if __name__ == "__main__":
                 out(f'Día {i+1}: Manos perdidas: {manos_perdidas}, Manos ganadas: {manos_ganadas}')
                 dias_exitosos += 1
                 jugar = False
-            input('Pulsa Enter para continuar...')
+            if not bot: input('Pulsa Enter para continuar...')
         cuenta_bancaria = cuenta_bancaria + dinero
 
         # Mostrar progreso cada 1%
